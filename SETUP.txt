@@ -1,0 +1,41 @@
+SM TECHNOLOGY WEBSITE — FORM SETUP
+=================================
+
+Files:
+- index.html
+- thank-you.html
+
+EMAIL SETUP (Web3Forms)
+-----------------------
+1. Go to https://web3forms.com/
+2. Create/get your Web3Forms Access Key for the destination email address.
+3. Open index.html.
+4. Search for:
+   YOUR_WEB3FORMS_ACCESS_KEY
+5. Replace it with your real Web3Forms Access Key.
+6. Upload index.html and thank-you.html to the same folder/server.
+
+IMPORTANT:
+- Do not paste a private SMTP password, secret server API key, or private API token into index.html.
+- The Web3Forms Access Key is specifically intended for this type of frontend form.
+- The form submits with fetch(), validates the fields, has a honeypot anti-spam field, disables the button while sending, and redirects to thank-you.html only after a successful response.
+
+FORM FIELDS
+-----------
+name
+email
+business
+phone
+message
+
+SUCCESS FLOW
+------------
+Visitor fills form
+-> browser validation
+-> Web3Forms POST
+-> email notification
+-> redirect to thank-you.html
+-> confirmation reference shown
+
+If your hosting blocks fetch/CORS or you want a private SMTP/API integration,
+use a small backend/serverless endpoint instead of exposing a private secret in HTML.
